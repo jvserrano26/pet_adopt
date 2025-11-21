@@ -1,0 +1,54 @@
+
+<!-- 🔔 Notification Bell -->
+<button type="button" class="btn btn-outline-primary position-relative me-2" data-bs-toggle="modal" data-bs-target="#notifModal">
+                🔔
+                <?php
+                $notif_count = mysqli_query($conn, "SELECT COUNT(*) AS cnt FROM adoptions WHERE user_id='$user_id' AND status IN ('Approved','Rejected')");
+                $count = mysqli_fetch_assoc($notif_count)['cnt'];
+                if ($count > 0) {
+                    echo "<span class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger'>$count</span>";
+                }
+                ?>
+            </button>
+
+            
+
+  // user and admin account //          
+user account
+user:user1
+pass:user1
+admin account
+user:admin
+pass:admin
+
+
+
+            create a folder named "uploads" and inside of uploads folder make a folder named "ids"
+
+// log in //
+<div class="container mt-5 col-md-4">
+    <h3 class="text-center mb-3">Login</h3>
+    <form method="POST">
+        <div class="mb-3">
+            <input type="text" name="username" class="form-control" placeholder="Username" required>
+        </div>
+        <div class="mb-3">
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+        </div>
+        <button name="login" class="btn btn-primary w-100">Login</button>
+        <p class="text-center mt-2"><a href="register.php">Register here</a></p>
+    </form>
+</div>
+
+// register // 
+   <h3 class="text-center mb-3">User Registration</h3>
+    <form method="POST">
+        <div class="mb-3">
+            <input type="text" name="username" class="form-control" placeholder="Username" required>
+        </div>
+        <div class="mb-3">
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+        </div>
+        <button name="register" class="btn btn-success w-100">Register</button>
+        <p class="text-center mt-2"><a href="index.php">Back to Login</a></p>
+    </form>
